@@ -1,0 +1,75 @@
+.header {
+  grid-column: full-start / col-end 6;
+
+  @include respond(tab-port) {
+    grid-row: 2 / 3;
+    grid-column: full-start / full-end;
+  }
+
+  background-image: linear-gradient(
+      rgba($color-secondary, 0.93),
+      rgba($color-secondary, 0.93)
+    ),
+    url(../img/hero.jpeg);
+  background-position: center;
+  background-size: cover;
+  padding: 4rem 8rem 8rem;
+
+  @include respond(phone-small) {
+    padding: 4rem;
+  }
+
+  display: grid;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  grid-template-columns: minmax(min-content, max-content);
+  justify-content: center;
+  row-gap: 1.5rem;
+
+  &__main-logo {
+    height: 3rem;
+    justify-self: center;
+
+    @include respond(tab-port) {
+      height: 4rem;
+    }
+  }
+
+  &__btn {
+    align-self: start;
+    justify-self: start;
+  }
+
+  &__seenon {
+    color: $color-grey-light-2;
+    font-size: 1.6rem;
+
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    column-gap: 1.5rem;
+    align-items: center;
+
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      background-color: currentColor;
+      height: 1px;
+    }
+  }
+
+  &__logos-list {
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    align-items: center;
+    justify-items: center;
+  }
+
+  &__secondary-logo {
+    max-height: 2.5rem;
+    max-width: 100%;
+    filter: brightness(0.7);
+  }
+}

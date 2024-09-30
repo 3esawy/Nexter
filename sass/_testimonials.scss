@@ -1,0 +1,71 @@
+.testimonials {
+  &__photos {
+    background-image: linear-gradient(
+        rgba($color-primary, 0.5),
+        rgba($color-primary, 0.5)
+      ),
+      url(../img/back.jpg);
+    grid-column: full-start / col-end 4;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    align-items: center;
+
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+
+  &__content {
+    background-color: $color-grey-light-1;
+    grid-column: col-start 5 / full-end;
+    padding: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    @include respond(tab-land) {
+      padding: 5rem;
+    }
+
+    @include respond(tab-port) {
+      grid-column: full-start / full-end;
+    }
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    font-style: italic;
+  }
+}
+
+.btn {
+  font-family: $font-display;
+  font-size: 1.6rem;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  padding: 1.8rem 2.5rem;
+  background-color: $color-primary;
+  transition: all 0.2s;
+  outline: none;
+
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+}
+
+.img--1 {
+  width: 100%;
+  grid-column: 2 / 6;
+  grid-row: 2 / 6;
+}
+
+.img--2 {
+  width: 115%;
+  grid-column: 4 / -1;
+  grid-row: 4 / 6;
+  z-index: 1;
+}
